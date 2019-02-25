@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<head>
+<script src="/assets/jquery.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<style>
+body {
+  font-family: 'Lobster', cursive;
+  margin: 0 auto;
+  max-width: 600px;
+  background: lightblue;
+}
+div {
+  height: 250px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  font-size: 75px;
+  color: black;
+  margin: 60px 0 0 0;
+}
+ ul {
+  padding: 10px;
+  background: rgba(1,100,1,0.5);
+  text-align: center;
+  background-color: lightblue;
+}
+ li {
+  display: inline;
+  padding: 0px 10px 0px 10px;
+ }
+h2 {
+  text-align: center;
+  color: black;
+  margin: 0px 0 70px 0;
+}
+p {
+  color: rgba(0,100,225,1);
+  background: white;
+  background: linear-gradient(bottom, rgba(0,0,60,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,60,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,60,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.price {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+    <ul>
+      <li><button onclick="first()">Individual rooms</a></li>
+      <li><button onclick="second()">Family rooms</button></li>
+      <li><button onclick="third()">Suite</button></li>
+    </ul>
+<h1>Ashley's Hotel</h1>
+<h2>A comfort palace</h2>
+
+<div id="hotel"></div>
+
+<script>
+luxuryonebedroomImages = [
+  'url("https://ritzcarlton-h.assetsadobe.com/is/image/content/dam/the-ritz-carlton/hotels/usa-and-canada/california/san-francisco/guest-rooms/RCSANFR_00429.png?$XlargeViewport100pct$")',
+  'url("https://www.firmdalehotels.com/media/1197664/180321_f_csh_rm_709_1134_lowresa.jpg?a=1&anchor=center&mode=crop&width=798&height=544&bgcolor=fff")',
+  'url("http://ultimatejetvacations.com/images_resort/west-bay-club-ocean-front-luxury-one-bedroom-suite_1429719798_2.jpg")',
+]
+
+familyroomImages = [
+  'url("https://www.royaltonresorts.com/uploadedimages/defaultimages/Untitled-2.jpg")',
+  'url("https://www.suninternational.com/content/dam/suninternational/wild-coast-sun/accommodation/wild-coast-family-room-bedroom-lounge%20area-garden%20view-4474.jpg.sunimage.1400.525.jpg")',
+  'url("https://www.moonpalace.com/sites/default/files/famili_deluxe-moon-palace-jamaica-accommodations-2269x1280-jun2017_5.jpg")',
+]
+
+SUITEtwobedImages = [
+  'url("https://www.oneandonlyresorts.com/-/media/oneandonly/cape-town/accommodations/presidential-suite/detail/1400x600/one-and-only-cape-town-presidential-suite.jpg?v3")',
+  'url("https://www.discoverysuites.com/files/2015/06/3BR-Suite-800x473.jpg")',
+  'url("https://s3-ap-southeast-2.amazonaws.com/media.meritonsuites.com.au/wp-content/uploads/2017/06/08014316/IMG_0868-r.jpg")',
+]
+ 
+luxuryonebedroomDivs = [
+  '<div class="item"><p>Plain Room <span class="price">$200</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
+			'<div class="item"><p>Beautiful Room <span class="price">$250</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
+			'<div class="item"><p>Extraordinary Room <span class="price">$290</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
+]
+
+familyroomDivs = [
+  '<div class="item"><p>Two beds <span class="price">$300</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
+			'<div class="item"><p>Two beds, pull out couch <span class="price">$350</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
+			'<div class="item"><p>Two beds,couch and partitions <span class="price">$390</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
+]
+
+SUITEDivs = [
+  '<div class="item"><p>Beds, dining room and kitchen <span class="price">$600</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
+			'<div class="item"><p>luxury Suite room <span class="price">$650</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
+			'<div class="item"><p>Two beds, full bath, full kitchen, living and dining room <span class="price">$690</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
+]
+
+  
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+  
+  function first(){
+    //alert("One bed, living room, outside window view, kitchen, bathroom");
+    	rooms = document.getElementById("hotel")
+    	rooms.innerHTML = ''
+    items = document.getElementsByClassName("item")
+    for (i=0; i<3; i=i+1) {
+	    rooms.innerHTML += luxuryonebedroomDivs[i]
+		  items[i].style.background = luxuryonebedroomImages[i]
+		  items[i].style.backgroundSize = '100% 100%'
+     }  
+  }
+  
+  function second(){
+    //alert("Two beds, kitchen, wonderful window view, bathroom");
+    items = document.getElementsByClassName("item")
+    rooms = document.getElementById("hotel")
+    rooms.innerHTML = ''
+    for (i=0; i<3; i=i+1) {
+      rooms.innerHTML += familyroomDivs[i]
+		  items[i].style.background = familyroomImages[i]
+		  items[i].style.backgroundSize = '100% 100%'
+     }  
+  } 
+  
+  function third(){
+    //alert("Two beds, dining and living room, kitchen, full bathroom and more");
+    items = document.getElementsByClassName("item")
+    rooms = document.getElementById("hotel")
+    rooms.innerHTML = ''
+    for (i=0; i<3; i=i+1) {
+	    rooms.innerHTML += SUITEDivs[i]
+		  items[i].style.background = SUITEtwobedImages[i]
+		  items[i].style.backgroundSize = '100% 100%'
+     }  
+  }
+</script>
+
+</body>
