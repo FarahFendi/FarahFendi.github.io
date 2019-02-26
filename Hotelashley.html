@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="/assets/jquery.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 <style>
@@ -129,27 +128,23 @@ SUITEtwobedImages = [
 ]
  
 luxuryonebedroomDivs = [
-  '<div class="item"><p>Plain Room <span class="price">$200</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
-			'<div class="item"><p>Beautiful Room <span class="price">$250</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
-			'<div class="item"><p>Extraordinary Room <span class="price">$290</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
+  '<div class="item" onclick=this.classList.toggle("show-description")><p>Plain Room <span class="price">$200</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>Beautiful Room <span class="price">$250</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>Extraordinary Room <span class="price">$290</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
 ]
 
 familyroomDivs = [
-  '<div class="item"><p>Two beds <span class="price">$300</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
-			'<div class="item"><p>Two beds, pull out couch <span class="price">$350</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
-			'<div class="item"><p>Two beds,couch and partitions <span class="price">$390</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
+  '<div class="item" onclick=this.classList.toggle("show-description")><p>Two beds <span class="price">$300</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>Two beds, pull out couch <span class="price">$350</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>Two beds,couch and partitions <span class="price">$390</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
 ]
 
 SUITEDivs = [
-  '<div class="item"><p>Beds, dining room and kitchen <span class="price">$600</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
-			'<div class="item"><p>luxury Suite room <span class="price">$650</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
-			'<div class="item"><p>Two beds, full bath, full kitchen, living and dining room <span class="price">$690</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
+  '<div class="item" onclick=this.classList.toggle("show-description")><p>Beds, dining room and kitchen <span class="price">$600</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>luxury Suite room <span class="price">$650</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>Two beds, full bath, full kitchen, living and dining room <span class="price">$690</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
 ]
 
-  
-  $('div').on('click', function() {
-      $(this).toggleClass('show-description');
-  });
   
   function first(){
     //alert("One bed, living room, outside window view, kitchen, bathroom");
