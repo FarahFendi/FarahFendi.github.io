@@ -102,6 +102,7 @@ small {
       <li><button onclick="first()">Individual rooms</a></li>
       <li><button onclick="second()">Family rooms</button></li>
       <li><button onclick="third()">Suite</button></li>
+      <li><button onclick="fourth()">Room Service</button></li>
     </ul>
 <h1>Ashley's Hotel</h1>
 <h2>A comfort palace</h2>
@@ -113,12 +114,15 @@ luxuryonebedroomImages = [
   'url("https://ritzcarlton-h.assetsadobe.com/is/image/content/dam/the-ritz-carlton/hotels/usa-and-canada/california/san-francisco/guest-rooms/RCSANFR_00429.png?$XlargeViewport100pct$")',
   'url("https://www.firmdalehotels.com/media/1197664/180321_f_csh_rm_709_1134_lowresa.jpg?a=1&anchor=center&mode=crop&width=798&height=544&bgcolor=fff")',
   'url("http://ultimatejetvacations.com/images_resort/west-bay-club-ocean-front-luxury-one-bedroom-suite_1429719798_2.jpg")',
+  'url("https://www.goldennugget.com/contentassets/9a24bfb9a57246d7ae25caf823b727b3/1-bedroom-suite-2-550x306.jpg")',
 ]
 
 familyroomImages = [
   'url("https://www.royaltonresorts.com/uploadedimages/defaultimages/Untitled-2.jpg")',
   'url("https://www.suninternational.com/content/dam/suninternational/wild-coast-sun/accommodation/wild-coast-family-room-bedroom-lounge%20area-garden%20view-4474.jpg.sunimage.1400.525.jpg")',
   'url("https://www.moonpalace.com/sites/default/files/famili_deluxe-moon-palace-jamaica-accommodations-2269x1280-jun2017_5.jpg")',
+  'url("https://www.sunwayhotels.com/Portals/3/Webp.net-resizeimage.jpg")',
+  'url("https://www.hotelwestport.ie/cmsGallery/imagerow/4468/resized/1260x547/standard_twin_room_at_hotel_westport_small.jpg")',
 ]
 
 SUITEtwobedImages = [
@@ -126,17 +130,25 @@ SUITEtwobedImages = [
   'url("https://www.discoverysuites.com/files/2015/06/3BR-Suite-800x473.jpg")',
   'url("https://s3-ap-southeast-2.amazonaws.com/media.meritonsuites.com.au/wp-content/uploads/2017/06/08014316/IMG_0868-r.jpg")',
 ]
+
+RoomserviceImages = [
+  'url("http://abcnews.go.com/images/Travel/gty_room_service_ll_130603_wblog.jpg")',
+  'url("https://www.peninsula.com/en/-/media/beverly-hills/updated-folder/room-service-pink.jpg?mw=987&hash=B5EE3EA40461CBDFA3605E964CBC6E2C399B9D0E")',
+]
  
 luxuryonebedroomDivs = [
   '<div class="item" onclick=this.classList.toggle("show-description")><p>Plain Room <span class="price">$200</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
 			'<div class="item" onclick=this.classList.toggle("show-description")><p>Beautiful Room <span class="price">$250</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
 			'<div class="item" onclick=this.classList.toggle("show-description")><p>Extraordinary Room <span class="price">$290</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>Plain Room <span class="price">$310</span><br /><small>Mustard sierra leone bed stuff. </small></p></div>',
 ]
 
 familyroomDivs = [
   '<div class="item" onclick=this.classList.toggle("show-description")><p>Two beds <span class="price">$300</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
 			'<div class="item" onclick=this.classList.toggle("show-description")><p>Two beds, pull out couch <span class="price">$350</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
 			'<div class="item" onclick=this.classList.toggle("show-description")><p>Two beds,couch and partitions <span class="price">$390</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>Two beds,couch and partitions <span class="price">$410</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
+			'<div class="item" onclick=this.classList.toggle("show-description")><p>Two beds,couch and partitions <span class="price">$490</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
 ]
 
 SUITEDivs = [
@@ -145,13 +157,17 @@ SUITEDivs = [
 			'<div class="item" onclick=this.classList.toggle("show-description")><p>Two beds, full bath, full kitchen, living and dining room <span class="price">$690</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
 ]
 
+RoomserviceDivs = [
+    '<div class="item" onclick=this.classList.toggle("show-description")><p>Half Meal <span class="price">$100</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
+      '<div class="item" onclick=this.classList.toggle("show-description")><p>Full Meal <span class="price">$190</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
+]
   
   function first(){
     //alert("One bed, living room, outside window view, kitchen, bathroom");
     	rooms = document.getElementById("hotel")
     	rooms.innerHTML = ''
     items = document.getElementsByClassName("item")
-    for (i=0; i<3; i=i+1) {
+    for (i=0; i<4; i=i+1) {
 	    rooms.innerHTML += luxuryonebedroomDivs[i]
 		  items[i].style.background = luxuryonebedroomImages[i]
 		  items[i].style.backgroundSize = '100% 100%'
@@ -163,7 +179,7 @@ SUITEDivs = [
     items = document.getElementsByClassName("item")
     rooms = document.getElementById("hotel")
     rooms.innerHTML = ''
-    for (i=0; i<3; i=i+1) {
+    for (i=0; i<5; i=i+1) {
       rooms.innerHTML += familyroomDivs[i]
 		  items[i].style.background = familyroomImages[i]
 		  items[i].style.backgroundSize = '100% 100%'
@@ -178,6 +194,17 @@ SUITEDivs = [
     for (i=0; i<3; i=i+1) {
 	    rooms.innerHTML += SUITEDivs[i]
 		  items[i].style.background = SUITEtwobedImages[i]
+		  items[i].style.backgroundSize = '100% 100%'
+     }  
+  }
+  
+    function fourth(){
+    	rooms = document.getElementById("hotel")
+    	rooms.innerHTML = ''
+    items = document.getElementsByClassName("item")
+    for (i=0; i<2; i=i+1) {
+	    rooms.innerHTML += RoomserviceDivs[i]
+		  items[i].style.background = RoomserviceImages[i]
 		  items[i].style.backgroundSize = '100% 100%'
      }  
   }
