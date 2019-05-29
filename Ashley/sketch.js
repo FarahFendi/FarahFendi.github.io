@@ -72,7 +72,16 @@ function draw() {
 }
 a = a + 3*direction_h 
 b = b - 4*direction_v
-    
+	  
+if (touches.length == 0)   {
+
+	controls for main character
+
+}
+	else { 
+		x = touches[0].x
+		y = touches[0].y
+}
 
 if ( a > width || a < 0) {
 	direction_h = direction_h * -1
