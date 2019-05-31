@@ -45,7 +45,7 @@ function setup() {
   score = 0
   enemy = 3
   level = 1
-  time = 10
+  time = 50
 }
 
 function draw() {
@@ -187,7 +187,7 @@ function restart() {
 			scoreboard[name] = score
 		}
         alert("Scoreboard: " +JSON.stringify(scoreboard,null,1)) 
-		time = 10
+		time = 50
 		score = 0
 		loop()
 		ocean.innerHTML = ""
