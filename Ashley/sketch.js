@@ -57,7 +57,8 @@ function draw() {
   circle(x,y,50*s)
   fill(220,20,60)
   circle(a,b,30*s)
-  
+	  
+ if (touches.length == 0)   { 
   if (keyIsDown(LEFT_ARROW)) {
     x = x - 5
 }
@@ -70,18 +71,22 @@ function draw() {
   if (keyIsDown(UP_ARROW)) {
     y = y - 5
 }
-a = a + 3*direction_h 
-b = b - 4*direction_v
-	  
-if (touches.length == 0)   {
-
-	controls for main character
-
-}
-	else { 
+}	 
+else { 
 		x = touches[0].x
 		y = touches[0].y
 }
+	  
+	  
+a = a + 3*direction_h 
+b = b - 4*direction_v
+	  
+
+
+	
+
+
+
 
 if ( a > width || a < 0) {
 	direction_h = direction_h * -1
